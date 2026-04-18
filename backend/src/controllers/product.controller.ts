@@ -1,9 +1,7 @@
-import { Request, Response } from "express";
-
 import * as productService from "@/services/product.service";
-import { ApiResponse, Product } from "@/types";
 
-
+import type { ApiResponse, Product } from "@/types";
+import type { Request, Response } from "express";
 
 
 // Listar todos
@@ -11,7 +9,7 @@ export const listProduct = async (req: Request, res: Response<ApiResponse<Produc
     try{
         const products = await productService.listProduct();
 
-        
+
         return res.status(200).json({
             message: "Products listed successfully",
             data: products,
@@ -27,11 +25,7 @@ export const listProduct = async (req: Request, res: Response<ApiResponse<Produc
 // Listar por id
 export const listProductById = async (req: Request, res: Response) => {
     try{
-        let id = req.params.id;
-
-        if(typeof id !== "string") {
-            return res.status(400).json({ error: "Invalid id" });
-        }
+        let id = req.params.id as string;
 
         const product = await productService.listProductById(id);
 
@@ -41,6 +35,14 @@ export const listProductById = async (req: Request, res: Response) => {
         });
     } catch(err) {
         console.error(err)
+
+        if(err instanceof Error) {
+            if(err.message === "PRODUCT_NOT_FOUND") 
+                return res.status(404).json({ error: "Product not found" });
+            
+            // .....
+        }
+        
         return res.status(500).json({error: "Internal server error"});
     }
 };

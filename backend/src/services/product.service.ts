@@ -6,8 +6,13 @@ export const listProduct = async ():Promise<Product[]> => {
 }
 
 
-export const listProductById = async (id?:string) => {
-    if(id) console.log("listar 1 produto");
-    return [];
+export const listProductById = async (id:string): Promise<Product[]>=> {
+    const product = await productRepository.listProductById(id);
+
+    if(product.length === 0)
+        throw new Error("PRODUCT_NOT_FOUND");
+    
+
+    return product;
 }
 

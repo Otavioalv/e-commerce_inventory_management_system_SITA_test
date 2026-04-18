@@ -1,12 +1,12 @@
-import { listProduct } from '@/controllers/product.controller';
-import { listProductById } from '@/services/product.service';
-import { Router, type Request, type Response } from 'express';
+import { listProduct, listProductById } from '@/controllers/product.controller';
+import { validateProductId } from '@/middlewares/validateProductId.middleware';
+import { Router } from 'express';
 
 const router = Router();
 
 // LIST
 router.get("/products", listProduct);
-router.get("/products/:id", listProductById);
+router.get("/products/:id", validateProductId, listProductById);
 
 
 // ADD PRODUCT

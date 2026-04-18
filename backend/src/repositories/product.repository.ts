@@ -7,8 +7,21 @@ export const listProduct = async ():Promise<Product[]> => {
         SELECT id, name, description, price, stock_quantity as stockQuantity FROM products;
     `;
 
-    const values = await pool.query<Product>(query);
+    const result = await pool.query<Product>(query);
 
-    return values.rows;
+    return result.rows;
+}
+
+export const listProductById = async (id: string):Promise<Product[]> => {    
+    const query = `
+        SELECT id, name, description, price, stock_quantity as stockQuantity 
+        FROM products
+        WHERE id = $1;
+    `;
+
+    const values = [id]
+    const result = await pool.query<Product>(query, values);
+
+    return result.rows;
 }
 
