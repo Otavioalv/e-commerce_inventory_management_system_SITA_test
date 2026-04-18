@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:17
+    container_name: ecommerce_psql_db
+    restart: always
+    environment:
+      POSTGRES_USER: otavio
+      POSTGRES_PASSWORD: 4d1v1nh4
+      POSTGRES_DB: ecommerce
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+volumes:
+  postgres_data:
