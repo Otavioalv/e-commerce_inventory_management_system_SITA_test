@@ -4,7 +4,7 @@ import type { ApiResponse, Product } from "@/types";
 import type { Request, Response } from "express";
 
 
-// Listar todos
+// List all products
 export const listProduct = async (req: Request, res: Response<ApiResponse<Product[]>>) => {
     try{
         const products = await productService.listProduct();
@@ -22,7 +22,7 @@ export const listProduct = async (req: Request, res: Response<ApiResponse<Produc
 };
 
 
-// Listar por id
+// list product by id
 export const listProductById = async (req: Request, res: Response) => {
     try{
         let id = req.params.id as string;
@@ -42,7 +42,9 @@ export const listProductById = async (req: Request, res: Response) => {
             
             // .....
         }
-        
+
         return res.status(500).json({error: "Internal server error"});
     }
 };
+
+
