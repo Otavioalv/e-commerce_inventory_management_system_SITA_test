@@ -23,9 +23,12 @@ export const listProduct = async (req: Request, res: Response<ApiResponse<Produc
 
 
 // list product by id
-export const listProductById = async (req: Request, res: Response<ApiResponse<Product[]>>) => {
+export const listProductById = async (
+    req: Request<{id: string}>,
+    res: Response<ApiResponse<Product[]>>
+) => {
     try{
-        let id = req.params.id as string;
+        let id = req.params.id;
 
         const product = await productService.listProductById(id);
 
@@ -53,7 +56,6 @@ export const addNewProduct = async (
 ) => {
     try {
         const data = req.body;
-
         const result = await productService.addNewProduct(data);
 
         return res.status(201).json({
@@ -67,3 +69,29 @@ export const addNewProduct = async (
 }
 
 
+export const updateProduct = async (
+    req: Request<{id: string}, {}, Product>, 
+    res: Response,
+) => {
+    try {
+        let id = req.params.id;
+        const data = req.body;
+
+        const result = await productService.updateProduct(id, data);
+
+        return res.status(200).json({
+            message: "Product updated successfully",
+            data: result
+        });
+    }catch(err) {
+        console.error(err)
+
+        if(err instanceof Error) {
+            if(err.message === "PRODUCT_NOT_FOUND") 
+                return res.status(404).json({ error: "Product not found" });
+            
+            // .....
+        }
+        return res.status(500).json({error: "Internal server error"});
+    }
+}

@@ -46,3 +46,31 @@ export const addNewProduct = async (product: Product): Promise<Product> => {
 
     return rows[0]
 }
+
+
+export const updateProduct = async (id: string, product: Product): Promise<Product | null> => {
+    const query = `
+        UPDATE products 
+        SET 
+            name = $1,
+            description = $2,
+            price = $3,
+            stock_quantity = $4
+        WHERE 
+            id = $5
+        RETURNING *;
+    `;
+
+    const values = [
+        product.name,
+        product.description,
+        product.price,
+        product.stockQuantity,
+        id
+    ];
+
+    const {rows} = await pool.query<Product>(query, values);
+
+    return rows[0] || null;
+}
+

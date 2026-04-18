@@ -16,7 +16,19 @@ export const listProductById = async (id:string): Promise<Product[]>=> {
     return product;
 }
 
-export const addNewProduct = async (product: Product): Promise<Product> => {
-    return await productRepository.addNewProduct(product);
+export const addNewProduct = async (productData: Product): Promise<Product> => {
+    return await productRepository.addNewProduct(productData);
 }
+
+
+export const updateProduct = async (id: string, productData: Product): Promise<Product> => {
+    const product = await productRepository.updateProduct(id,productData);
+
+    if(!product) {
+        throw new Error("PRODUCT_NOT_FOUND");
+    }
+
+    return product;
+}
+
 
