@@ -23,7 +23,7 @@ export const listProduct = async (req: Request, res: Response<ApiResponse<Produc
 
 
 // list product by id
-export const listProductById = async (req: Request, res: Response) => {
+export const listProductById = async (req: Request, res: Response<ApiResponse<Product[]>>) => {
     try{
         let id = req.params.id as string;
 
@@ -46,5 +46,24 @@ export const listProductById = async (req: Request, res: Response) => {
         return res.status(500).json({error: "Internal server error"});
     }
 };
+
+export const addNewProduct = async (
+    req: Request<{}, {}, Product>, 
+    res: Response<ApiResponse<Product>>
+) => {
+    try {
+        const data = req.body;
+
+        const result = await productService.addNewProduct(data);
+
+        return res.status(201).json({
+            message: "Product added successfully",
+            data: result
+        });
+    }catch(err) {
+        console.error(err)
+        return res.status(500).json({error: "Internal server error"});
+    }
+}
 
 

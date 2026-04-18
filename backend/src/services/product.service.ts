@@ -11,8 +11,12 @@ export const listProductById = async (id:string): Promise<Product[]>=> {
 
     if(product.length === 0)
         throw new Error("PRODUCT_NOT_FOUND");
-    
+
 
     return product;
+}
+
+export const addNewProduct = async (product: Product): Promise<Product> => {
+    return await productRepository.addNewProduct(product);
 }
 

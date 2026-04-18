@@ -1,5 +1,6 @@
-import { listProduct, listProductById } from '@/controllers/product.controller';
-import { validateProductId } from '@/middlewares/validateProductId.middleware';
+import { addNewProduct, listProduct, listProductById } from '@/controllers/product.controller';
+import { validateProductData, validateProductId } from '@/middlewares/product.middleware';
+
 import { Router } from 'express';
 
 const router = Router();
@@ -10,7 +11,7 @@ router.get("/products/:id", validateProductId, listProductById);
 
 
 // ADD PRODUCT
-router.post("/products", () => {});
+router.post("/products", validateProductData, addNewProduct);
 
 // UPDATE PRODUCT
 router.put("/products/:id", () => {});
