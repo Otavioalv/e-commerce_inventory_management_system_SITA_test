@@ -2,7 +2,7 @@
 
 **Create a RESTful API with the following endpoints:**
 - [ ] GET /api/products: Retrieve all products.
-- [ ] /api/products/{id}: Retrieve a product by ID.
+- [ ] GET /api/products/{id}: Retrieve a product by ID.
 - [ ] POST /api/products: Add a new product.
 - [ ] PUT /api/products/{id}: Update an existing product.
 - [ ] DELETE /api/products/{id}: Delete a product.
