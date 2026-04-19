@@ -1,6 +1,6 @@
-import * as productRepository from '@/repositories/product.repository';
+import * as productRepository from '@/modules/products/products.repository';
 
-import type { Product } from '@/types';
+import type { Product } from '@/shared/types';
 
 export const listProduct = async ():Promise<Product[]> => {
     return productRepository.listProduct();

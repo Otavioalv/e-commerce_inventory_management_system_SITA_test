@@ -1,5 +1,5 @@
-import { addNewProduct, deleteProduct, listProduct, listProductById, updateProduct } from '@/controllers/product.controller';
-import { validateProductData, validateProductId } from '@/middlewares/product.middleware';
+import { addNewProduct, deleteProduct, listProduct, listProductById, updateProduct } from '@/modules/products/products.controller';
+import { validateProductData, validateProductId } from '@/modules/products/products.validation';
 
 import { Router } from 'express';
 

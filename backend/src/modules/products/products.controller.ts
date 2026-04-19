@@ -1,6 +1,6 @@
-import * as productService from "@/services/product.service";
+import * as productService from "@/modules/products/products.service";
 
-import type { ApiResponse, Product } from "@/types";
+import type { ApiResponse, Product } from "@/shared/types";
 import type { Request, Response } from "express";
 
 

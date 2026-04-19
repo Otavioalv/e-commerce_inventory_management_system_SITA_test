@@ -1,5 +1,5 @@
 import pool from '@/config/database';
-import type { Product } from '@/types';
+import type { Product } from '@/shared/types';
 
 
 export const listProduct = async ():Promise<Product[]> => {    
