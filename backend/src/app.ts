@@ -11,7 +11,10 @@ import type { Request, Response } from 'express';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
+
 app.use(express.json());
 
 app.get("/status", (req: Request, res:Response) => {
