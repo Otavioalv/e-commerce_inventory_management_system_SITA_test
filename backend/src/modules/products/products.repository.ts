@@ -81,7 +81,7 @@ export const deleteProduct = async (id: string) => {
 
     const {rows} = await pool.query<Product>(query, [id]);
 
-    console.log(rows);
+    // console.log(rows);
 
     return rows[0] || null
 }
