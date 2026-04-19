@@ -1,24 +1,12 @@
-import { useCallback, useEffect } from "react"
-import { api } from "./services/ecommerceAPI"
+import { BrowserRouter } from "react-router-dom"
+import AppRoutes from "./routes"
 
 function App() {
 
-  const getProducts = useCallback(async () => {
-    const prod =  await api.get("/products");
-
-    console.log(prod);
-  }, []);
-
-  useEffect(() => { 
-    getProducts();
-  })
-
   return (
-    <>
-      <h1>
-        teste
-      </h1>
-    </>
+    <BrowserRouter>
+      <AppRoutes/>
+    </BrowserRouter>
   )
 }
 
