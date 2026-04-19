@@ -1,13 +1,16 @@
 import 'dotenv/config';
-
 import express from 'express';
+
 import router from './routes/product.router.js';
+import cors from 'cors';
+
 
 
 import type { Request, Response } from 'express';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/status", (req: Request, res:Response) => {
