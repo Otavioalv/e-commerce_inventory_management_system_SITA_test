@@ -170,10 +170,6 @@ const MOCK_PRODUCTS = [
 export default function HomePage() {
     return (
         <Container>
-            <header className="py-4 font-bold text-xl border-b border-zinc-400 w-full">
-                E-Commerce
-            </header>
-
             <MainContainer>
                 <div className="flex flex-col justify-between gap-4 md:flex-row">
                     <div className="">
@@ -185,7 +181,7 @@ export default function HomePage() {
                         </h2>
                     </div>
 
-                    <button className="bg-gray-900 text-white py-3 px-5 rounded-md font-bold active:bg-gray-900/90 hover:bg-gray-900/95 transition-all cursor-pointer text-sm">
+                    <button className="bg-gray-900 text-white py-3 px-5 rounded-md font-bold active:bg-gray-900/80 hover:bg-gray-900/90 transition-all cursor-pointer text-sm">
                         + Add New Product
                     </button>
                 </div>
@@ -222,12 +218,6 @@ export default function HomePage() {
                     </table>
                 </div>
             </MainContainer>
-
-            <footer className="flex justify-center p-10 text-gray-900 w-full">
-                <p>
-                    &#169; 2026 - E-Commerce 
-                </p>
-            </footer>
         </Container>
     );
 }
