@@ -23,7 +23,5 @@ router.put("/products/:id",
 // DELETE PRODUCT
 router.delete("/products/:id", validateProductId, deleteProduct);
 
-
-
 export default router;
 

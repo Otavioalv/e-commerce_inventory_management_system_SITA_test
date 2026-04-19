@@ -4,11 +4,11 @@
 update node 18-04-26 (alias bug tsconfig.json)
 
 **Create a RESTful API with the following endpoints:**
-- [ ] GET /api/products: Retrieve all products.
-- [ ] GET /api/products/{id}: Retrieve a product by ID.
-- [ ] POST /api/products: Add a new product.
-- [ ] PUT /api/products/{id}: Update an existing product.
-- [ ] DELETE /api/products/{id}: Delete a product.
+- [x] GET /api/products: Retrieve all products.
+- [x] GET /api/products/{id}: Retrieve a product by ID.
+- [x] POST /api/products: Add a new product.
+- [x] PUT /api/products/{id}: Update an existing product.
+- [x] DELETE /api/products/{id}: Delete a product.
 
 **Define a Product model with the following fields:**
 - [ ] 
