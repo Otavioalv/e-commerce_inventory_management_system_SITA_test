@@ -3,7 +3,9 @@ import { validateProductData, validateProductId } from '@/middlewares/product.mi
 
 import { Router } from 'express';
 
+
 const router = Router();
+
 
 // LIST
 router.get("/products", listProduct);

@@ -1,9 +1,9 @@
 import { productCreateSchema, productIdSchema } from "@/schemas/product.schema";
 import z from "zod";
 
-
 import type { Request, Response, NextFunction } from "express";
 import type { ApiResponse } from "@/types";
+
 
 export const validateProductId = (req: Request, res: Response<ApiResponse<null>>, next: NextFunction) => {
     const result = productIdSchema.safeParse(req.params.id);
@@ -11,6 +11,8 @@ export const validateProductId = (req: Request, res: Response<ApiResponse<null>>
     if(!result.success) {
         return res.status(400).json({ error: "Invalid id" });
     }
+
+    req.params.id = result.data;
     
     return next();
 };
