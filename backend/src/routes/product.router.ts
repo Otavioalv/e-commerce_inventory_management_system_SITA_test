@@ -1,4 +1,4 @@
-import { addNewProduct, listProduct, listProductById, updateProduct } from '@/controllers/product.controller';
+import { addNewProduct, deleteProduct, listProduct, listProductById, updateProduct } from '@/controllers/product.controller';
 import { validateProductData, validateProductId } from '@/middlewares/product.middleware';
 
 import { Router } from 'express';
@@ -21,7 +21,7 @@ router.put("/products/:id",
 );
 
 // DELETE PRODUCT
-router.delete("/products/:id", () => {});
+router.delete("/products/:id", validateProductId, deleteProduct);
 
 
 

@@ -1,8 +1,8 @@
 import { productCreateSchema, productIdSchema } from "@/schemas/product.schema";
-
-import type { Request, Response, NextFunction } from "express";
 import z from "zod";
 
+
+import type { Request, Response, NextFunction } from "express";
 import type { ApiResponse } from "@/types";
 
 export const validateProductId = (req: Request, res: Response<ApiResponse<null>>, next: NextFunction) => {

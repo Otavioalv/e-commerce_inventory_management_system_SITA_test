@@ -1,5 +1,5 @@
 import pool from '@/config/database';
-import { Product } from '@/types';
+import type { Product } from '@/types';
 
 
 export const listProduct = async ():Promise<Product[]> => {    
@@ -72,5 +72,17 @@ export const updateProduct = async (id: string, product: Product): Promise<Produ
     const {rows} = await pool.query<Product>(query, values);
 
     return rows[0] || null;
+}
+
+export const deleteProduct = async (id: string) => {
+    const query = `
+        DELETE from products WHERE id = $1 RETURNING *;
+    `;
+
+    const {rows} = await pool.query<Product>(query, [id]);
+
+    console.log(rows);
+
+    return rows[0] || null
 }
 

@@ -95,3 +95,27 @@ export const updateProduct = async (
         return res.status(500).json({error: "Internal server error"});
     }
 }
+
+export const deleteProduct = async (
+    req: Request<{id: string}>, 
+    res: Response,
+) => {
+    try {
+        let id = req.params.id;
+        const result = await productService.deleteProduct(id);
+
+        return res.status(200).json({
+            message: "Product successfully deleted",
+            data: result
+        });
+    }catch(err) {
+        console.error(err)
+
+        if(err instanceof Error) {
+            if(err.message === "PRODUCT_NOT_FOUND") 
+                return res.status(404).json({ error: "There is no product to delete" });
+
+        }
+        return res.status(500).json({error: "Internal server error"});
+    }
+}

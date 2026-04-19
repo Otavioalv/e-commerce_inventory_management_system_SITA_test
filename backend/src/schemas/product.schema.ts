@@ -4,8 +4,8 @@ import { z } from "zod";
 // Valid product id
 export const productIdSchema = z.coerce.number().int().positive();
 
-
-export const productCreateSchema = z.object({
+// Valid product data
+export const productCreateSchema:z.ZodType<Omit<Product, 'id'>> = z.object({
     name: z
         .string("Value must be characters")
         .min(1, "Name is required"),

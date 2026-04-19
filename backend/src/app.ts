@@ -1,7 +1,10 @@
 import 'dotenv/config';
 
-import express, { type Request, type Response } from 'express';
+import express from 'express';
 import router from './routes/product.router.js';
+
+
+import type { Request, Response } from 'express';
 
 const app = express();
 

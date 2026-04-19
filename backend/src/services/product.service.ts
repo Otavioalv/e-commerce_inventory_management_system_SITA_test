@@ -1,5 +1,6 @@
 import * as productRepository from '@/repositories/product.repository';
-import { Product } from '@/types';
+
+import type { Product } from '@/types';
 
 export const listProduct = async ():Promise<Product[]> => {
     return productRepository.listProduct();
@@ -31,4 +32,12 @@ export const updateProduct = async (id: string, productData: Product): Promise<P
     return product;
 }
 
+export const deleteProduct = async (id: string) => {
+    const product = await productRepository.deleteProduct(id);
 
+    if(!product) {
+        throw new Error("PRODUCT_NOT_FOUND");
+    }
+
+    return product;
+}
