@@ -1,12 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
 
-// test
-const Home = () => (
-    <h1>
-        home
-    </h1>
-)
+import HomePage from "../pages/HomePage";
+
 
 
 export default function ProductsRoutes() {
@@ -23,7 +19,7 @@ export default function ProductsRoutes() {
 
             <Route
                 path="home"
-                element={<Home/>}
+                element={<HomePage/>}
             />
         </Routes>
     );
