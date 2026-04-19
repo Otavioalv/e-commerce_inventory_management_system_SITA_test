@@ -11,7 +11,7 @@ update node 18-04-26 (alias bug tsconfig.json)
 - [x] DELETE /api/products/{id}: Delete a product.
 
 **Define a Product model with the following fields:**
-- [ ] 
+- [x] 
 ```js
     Id (auto-generated)
     Name (string)
@@ -24,7 +24,7 @@ update node 18-04-26 (alias bug tsconfig.json)
 
 
 **Additional Features**
-- [ ] Implement error handling for API requests and display meaningful
-- [ ] messages to the user.
+- [x] Implement error handling for API requests and display meaningful
+- [x] messages to the user.
 - [ ] Add basic authentication (e.g., JWT) to secure the API endpoints.
 - [ ] Write unit tests
