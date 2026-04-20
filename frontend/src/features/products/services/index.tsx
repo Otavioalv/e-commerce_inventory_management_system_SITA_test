@@ -10,10 +10,15 @@ export const fetchProductList = async ():Promise<ApiResponse<Product[]>> => {
     return result.data;
 }
 
+// Get by id
+export const fetchProductById = async (id: number): Promise<ApiResponse<Product[]>> => {
+    const result = await api.get<ApiResponse<Product[]>>(`/products/${id}`);
+    return result.data;
+};
+
 // Add new product
 export const fetchProductAdd = async (product: Omit<Product, "id">):Promise<ApiResponse<Product>> => {
-    await new Promise((resolver) => setTimeout(resolver, 5000));
-    
+    // await new Promise((resolver) => setTimeout(resolver, 5000));
     const result = await api.post<ApiResponse<Product>>("/products", product)   
     return result.data;
 }

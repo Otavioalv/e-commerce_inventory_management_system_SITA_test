@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { ProductContext } from "./product.context";
-import { fetchProductAdd, fetchProductDelete, fetchProductList } from "../services";
+import { fetchProductAdd, fetchProductById, fetchProductDelete, fetchProductList } from "../services";
 
 import type { Product } from "../types";
 
@@ -12,10 +12,10 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
     // helper - separate to global file if need to reuse
-    const runAsync = useCallback(async (fn: () => Promise<void>) => {
+    const runAsync = useCallback(async<T,> (fn: () => Promise<T>) => {
         try {
             setIsLoading(true);
-            await fn();
+            return await fn();
         } catch (err) {
             console.error(err);
             throw err;
@@ -26,12 +26,19 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     
     
     
-    
     const fetchProducts = useCallback(() => {
         return runAsync(async() => {
             const result = await fetchProductList();
             setProducts(result.data ?? []);
         });
+    }, [runAsync]);
+
+    const fetchById = useCallback((id: number):Promise<Product[]> => {
+        return runAsync(async ():Promise<Product[]> => {
+            const result = await fetchProductById(id);
+
+            return result.data ?? [];
+        })
     }, [runAsync]);
 
 
@@ -67,6 +74,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
                 fetchProducts,
                 deleteProduct,
                 addProduct,
+                fetchById,
                 isLoading
             }}
         >
