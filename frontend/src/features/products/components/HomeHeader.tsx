@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../../shared/components/ui/Button";
 
 
 export const HomeHeader = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="flex flex-col justify-between gap-4 md:flex-row">
             <div className="">
@@ -13,7 +16,10 @@ export const HomeHeader = () => {
                 </h2>
             </div>
 
-            <Button>
+            <Button
+
+                onClick={() => navigate("/products/create")}
+            >
                 + Add New Product
             </Button>
         </div>

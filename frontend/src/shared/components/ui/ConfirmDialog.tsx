@@ -24,7 +24,7 @@ export const ConfirmDialog = ({
             <div className="bg-white p-6 rounded-md shadow-md w-75">
                 
                 <h2 className="text-lg font-semibold mb-2">{title}</h2>
-                <p className="text-sm text-gray-600 mb-4">{description}</p>
+                <p className="text-sm text-gray-500 mb-4">{description}</p>
 
                 <div className="flex justify-end gap-2">
                     <Button

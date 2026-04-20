@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import HomePage from "../pages/HomePage";
 import Layout from "../../../shared/components/layout/Layout";
+import AddProductPage from "../pages/AddProductPage";
 
 export default function ProductsRoutes() {
     return (
@@ -19,6 +20,11 @@ export default function ProductsRoutes() {
                 <Route
                     path="home"
                     element={<HomePage/>}
+                />
+
+                <Route
+                    path="create"
+                    element={<AddProductPage/>}
                 />
             </Route>
         </Routes>

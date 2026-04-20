@@ -11,6 +11,7 @@ interface IProductTableProps extends Omit<ProductContextType, "isLoading"> {
     products: Product[],
 }
 */
+
 interface IProductTableProps {
     products: Product[],
     isLoading: boolean,

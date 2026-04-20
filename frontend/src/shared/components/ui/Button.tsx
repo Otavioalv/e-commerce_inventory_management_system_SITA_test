@@ -12,6 +12,7 @@ const buttonVariants = cva(
                 outline: "border border-gray-900 text-gray-700 hover:bg-gray-100 active:bg-gray-200",
                 disabled: "bg-gray-200 text-gray-400",
                 icon: "p-2 bg-transparent hover:bg-gray-100 hover:bg-gray-100 active:bg-gray-200",
+                none: "active:opacity-40 hover:opacity-60",
             },
         },
         defaultVariants: {
