@@ -32,12 +32,12 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
         });
     }, [runAsync]);
 
-    const deleteProduct = useCallback((id: number) => {
+    const deleteProduct = (id: number) => {
         return runAsync(async() => {
             await fetchProductDelete(id);
             await fetchProducts();
-        })
-    }, [runAsync, fetchProducts]);
+        })  
+    };
 
     // Auto reload products
     useEffect(() => {

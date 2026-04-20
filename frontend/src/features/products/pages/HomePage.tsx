@@ -20,6 +20,7 @@ export default function HomePage() {
 
             <HomeHeader/>
             <ProductsTable
+                isLoading={isLoading}
                 products={products}
                 deleteProduct={deleteProduct}
             />

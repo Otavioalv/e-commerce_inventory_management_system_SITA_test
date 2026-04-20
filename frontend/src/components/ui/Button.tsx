@@ -10,6 +10,7 @@ const buttonVariants = cva(
             variant: {
                 default: "bg-gray-900 text-white active:bg-gray-900/80 hover:bg-gray-900/90",
                 outline: "border border-gray-900 text-gray-700 hover:bg-gray-100 active:bg-gray-200",
+                disabled: "bg-gray-200 text-gray-400",
                 icon: "p-2 bg-transparent hover:bg-gray-100 hover:bg-gray-100 active:bg-gray-200",
             },
         },

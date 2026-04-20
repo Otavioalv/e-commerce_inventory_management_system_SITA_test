@@ -2,7 +2,7 @@ import axios from 'axios';
 import { AppError } from '../../errors/AppError';
 
 export const api = axios.create({
-    baseURL: "http://localhost:3333/api",
+    baseURL: "http://192.168.1.9:3333/api",
     timeout: 20000,
     headers: {"Content-Type": "application/json"}
 });
