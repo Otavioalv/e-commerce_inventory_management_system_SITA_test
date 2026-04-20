@@ -8,6 +8,7 @@ import { useProducts } from "../state/useProducts";
 export default function HomePage() {
     const {
         products,
+        deleteProduct,
         isLoading,
     } = useProducts();
 
@@ -16,10 +17,11 @@ export default function HomePage() {
             <FullPageLoading
                 isLoading={isLoading}
             />
-            
+
             <HomeHeader/>
             <ProductsTable
                 products={products}
+                deleteProduct={deleteProduct}
             />
         </Container>
     );

@@ -3,12 +3,29 @@ import { LuPencil, LuTrash2 } from "react-icons/lu";
 import { Button } from "../../../components/ui/Button";
 import type { Product } from "../types";
 
+
+/* 
+interface IProductTableProps extends Omit<ProductContextType, "isLoading"> {
+    products: Product[],
+}
+*/
 interface IProductTableProps {
     products: Product[],
+    deleteProduct: (id: number) => Promise<void>;
 }
 
 
-export const ProductsTable = ({products}: IProductTableProps) => {
+export const ProductsTable = ({
+    products, 
+    deleteProduct
+}: IProductTableProps) => {
+    
+
+    const handleDelete = async (id: number) => {
+        console.log("produto deletado: ", id);
+        await deleteProduct(id);
+    }
+
     return (
         <div className="w-full overflow-x-auto shadow-md sm:rounded-lg rounded-md">
             <table className="w-full text-sm text-left text-gray-500">
@@ -36,7 +53,10 @@ export const ProductsTable = ({products}: IProductTableProps) => {
                                 <Button variant={"icon"}>
                                     <LuPencil size={18}/>
                                 </Button>
-                                <Button variant={"icon"}>
+                                <Button 
+                                    variant={"icon"}
+                                    onClick={() => handleDelete(prod.id)}
+                                >
                                     <LuTrash2 size={18}/>
                                 </Button>
                             </td>

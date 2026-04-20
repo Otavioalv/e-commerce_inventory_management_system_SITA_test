@@ -24,6 +24,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     }, []); 
     
     
+    
     const fetchProducts = useCallback(() => {
         return runAsync(async() => {
             const result = await fetchProductList();
@@ -34,8 +35,9 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     const deleteProduct = useCallback((id: number) => {
         return runAsync(async() => {
             await fetchProductDelete(id);
+            await fetchProducts();
         })
-    }, [runAsync]);
+    }, [runAsync, fetchProducts]);
 
     // Auto reload products
     useEffect(() => {
