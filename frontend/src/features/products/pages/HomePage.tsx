@@ -16,6 +16,7 @@ export default function HomePage() {
             <FullPageLoading
                 isLoading={isLoading}
             />
+            
             <HomeHeader/>
             <ProductsTable
                 products={products}

@@ -7,6 +7,7 @@ export type ProductContextType = {
     isLoading: boolean;
     products: Product[];
     fetchProducts: () => Promise<void>;
+    deleteProduct: (id: number) => Promise<void>;
     // addProduct: (data: Product) => Promise<void>;
 };
 
