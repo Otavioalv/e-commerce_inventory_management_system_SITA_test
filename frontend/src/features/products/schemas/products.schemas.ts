@@ -19,7 +19,7 @@ export const productSchema = z.object({
             message: "Price must be greater than zero",
         }),
 
-    stockquantity: z
+    stockQuantity: z
         .string()
         .nonempty("Mandatory stock")
         .refine(val => /^\d+$/.test(val), {

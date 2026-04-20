@@ -8,7 +8,7 @@ export type ProductContextType = {
     products: Product[];
     fetchProducts: () => Promise<void>;
     deleteProduct: (id: number) => Promise<void>;
-    // addProduct: (data: Product) => Promise<void>;
+    addProduct: (data: Omit<Product, "id">) => Promise<void>;
 };
 
 export const ProductContext = createContext<ProductContextType | null>(null);

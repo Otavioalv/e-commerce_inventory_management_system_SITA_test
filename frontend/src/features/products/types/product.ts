@@ -4,5 +4,5 @@ export type Product = {
     description: string,
     price: number,
     id: number,
-    stockquantity: number,
+    stockQuantity: number,
 };

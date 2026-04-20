@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { ProductContext } from "./product.context";
-import { fetchProductDelete, fetchProductList } from "../services";
+import { fetchProductAdd, fetchProductDelete, fetchProductList } from "../services";
 
 import type { Product } from "../types";
 
@@ -25,12 +25,22 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     
     
     
+    
     const fetchProducts = useCallback(() => {
         return runAsync(async() => {
             const result = await fetchProductList();
             setProducts(result.data ?? []);
         });
     }, [runAsync]);
+
+
+    const addProduct = (product: Omit<Product, "id">) => {
+        return runAsync(async () => {
+            await fetchProductAdd(product);
+            await fetchProducts()
+        });
+    }
+
 
     const deleteProduct = (id: number) => {
         return runAsync(async() => {
@@ -55,6 +65,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
                 products, 
                 fetchProducts,
                 deleteProduct,
+                addProduct,
                 isLoading
             }}
         >

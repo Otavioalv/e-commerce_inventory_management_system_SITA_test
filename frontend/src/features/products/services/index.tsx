@@ -10,6 +10,13 @@ export const fetchProductList = async ():Promise<ApiResponse<Product[]>> => {
     return result.data;
 }
 
+// Add new product
+export const fetchProductAdd = async (product: Omit<Product, "id">):Promise<ApiResponse<Product>> => {
+    console.log(product);
+    const result = await api.post<ApiResponse<Product>>("/products", product)   
+    return result.data;
+}
+
 // Delete product by id
 export const fetchProductDelete = async (id: number):Promise<ApiResponse<Product>> => {
     const result = await api.delete<ApiResponse<Product>>(`/products/${id}`);   

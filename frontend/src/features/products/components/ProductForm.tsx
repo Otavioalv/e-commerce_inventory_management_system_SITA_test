@@ -15,10 +15,12 @@ import type { ProductFormData } from "../schemas/products.schemas";
 interface IProductFormProps {
     title: string,
     onSaveProduct: (data: ProductFormData) => void,
+    isLoading: boolean,
 }
 
 export const ProductForm = ({
     title,
+    isLoading,
     onSaveProduct,
 }: IProductFormProps) => {
     const methods = useForm<ProductFormData>({
@@ -27,7 +29,7 @@ export const ProductForm = ({
             name: "",
             description: "",
             price: "",
-            stockquantity: "",
+            stockQuantity: "",
         }
     });
     
@@ -90,7 +92,7 @@ export const ProductForm = ({
                         )}
                     </FormField>
 
-                    <FormField name="stockquantity">
+                    <FormField name="stockQuantity">
                         {({ register, error }) => (
                             <div className="flex-1 min-w-0">
                                 <FormInput 
@@ -108,6 +110,8 @@ export const ProductForm = ({
 
                 <Button 
                     type="submit" 
+                    disabled={isLoading}
+                    variant={isLoading ? "disabled" : "default"}
                     className="w-full bg-[#0f172a] text-white py-3 rounded-md font-bold hover:bg-slate-800 transition-colors"
                 >
                     Save Product
