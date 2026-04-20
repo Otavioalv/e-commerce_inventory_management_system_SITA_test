@@ -1,12 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { Container } from "../../../shared/components/ui/Container";
 import { ProductForm } from "../components/ProductForm";
 
 import type { ProductFormData } from "../schemas/products.schemas";
 import { useProducts } from "../state/useProducts";
+import { FullPageLoading } from "../../../shared/components/layout/FullPageLoading";
 
 
 export default function AddProductPage() {
-    
+    const navigate = useNavigate();
+
     const {
         addProduct,
         isLoading,
@@ -19,10 +22,15 @@ export default function AddProductPage() {
             price: Number(data.price),
             stockQuantity: Number(data.stockQuantity),
         });
+
+        navigate("/products/home");
     };
 
     return (
         <Container>
+            <FullPageLoading
+                isLoading={isLoading}
+            />
             <ProductForm
                 onSaveProduct={handleSave}
                 title="Create a New Product"

@@ -18,6 +18,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
             await fn();
         } catch (err) {
             console.error(err);
+            throw err;
         } finally {
             setIsLoading(false);
         }

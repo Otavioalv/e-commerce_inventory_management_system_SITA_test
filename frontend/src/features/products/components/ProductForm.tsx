@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 
 
 import type { ProductFormData } from "../schemas/products.schemas";
+import { useNavigate } from "react-router-dom";
 
 
 interface IProductFormProps {
@@ -23,6 +24,8 @@ export const ProductForm = ({
     isLoading,
     onSaveProduct,
 }: IProductFormProps) => {
+    const navigate = useNavigate();
+
     const methods = useForm<ProductFormData>({
         resolver: zodResolver(productSchema),
         defaultValues: {
@@ -37,9 +40,10 @@ export const ProductForm = ({
     return (
         <>
             <div>
-                <Button
+                <Button 
                         className="text-gray-500 text-sm px-0 flex items-center gap-1"
                         variant={"none"}
+                        onClick={() => navigate("/products/home")}
                     >
                         <LuChevronLeft/> Back to Inventory
                 </Button>
@@ -112,7 +116,6 @@ export const ProductForm = ({
                     type="submit" 
                     disabled={isLoading}
                     variant={isLoading ? "disabled" : "default"}
-                    className="w-full bg-[#0f172a] text-white py-3 rounded-md font-bold hover:bg-slate-800 transition-colors"
                 >
                     Save Product
                 </Button>

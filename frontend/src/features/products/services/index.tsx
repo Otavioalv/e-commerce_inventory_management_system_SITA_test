@@ -12,7 +12,8 @@ export const fetchProductList = async ():Promise<ApiResponse<Product[]>> => {
 
 // Add new product
 export const fetchProductAdd = async (product: Omit<Product, "id">):Promise<ApiResponse<Product>> => {
-    console.log(product);
+    await new Promise((resolver) => setTimeout(resolver, 5000));
+    
     const result = await api.post<ApiResponse<Product>>("/products", product)   
     return result.data;
 }
