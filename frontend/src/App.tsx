@@ -1,6 +1,6 @@
 import { ProductProvider } from "./features/products/state/product.provider"
 import { BrowserRouter } from "react-router-dom"
-import AppRoutes from "./routes"
+import AppRoutes from "./shared/routes"
 
 function App() {
 

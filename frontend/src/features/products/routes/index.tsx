@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 
 import HomePage from "../pages/HomePage";
-import Layout from "../../../components/layout/Layout";
+import Layout from "../../../shared/components/layout/Layout";
 
 export default function ProductsRoutes() {
     return (

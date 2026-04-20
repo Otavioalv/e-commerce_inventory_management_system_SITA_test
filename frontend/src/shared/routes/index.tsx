@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import ProductsRoutes from "../features/products/routes";
+import ProductsRoutes from "../../features/products/routes";
 
 export default function AppRoutes() {
   return (

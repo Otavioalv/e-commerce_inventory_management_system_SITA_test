@@ -1,6 +1,6 @@
 import { LuPencil, LuTrash2 } from "react-icons/lu";
 
-import { Button } from "../../../components/ui/Button";
+import { Button } from "../../../shared/components/ui/Button";
 import type { Product } from "../types";
 import { useState } from "react";
 import { DeleteProductDialog } from "./DeleteProductDialog";

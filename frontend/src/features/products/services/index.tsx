@@ -1,6 +1,6 @@
-import { api } from "../../../services/ecommerceAPI";
+import { api } from "../../../shared/services/ecommerceAPI";
 
-import type { ApiResponse } from "../../../types";
+import type { ApiResponse } from "../../../shared/types";
 import type { Product } from "../types";
 
 
