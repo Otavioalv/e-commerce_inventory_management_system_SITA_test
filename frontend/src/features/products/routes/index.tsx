@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import Layout from "../../../shared/components/layout/Layout";
 import AddProductPage from "../pages/AddProductPage";
+import EditProductPage from "../pages/EditProductPage";
 
 export default function ProductsRoutes() {
     return (
@@ -26,6 +27,12 @@ export default function ProductsRoutes() {
                     path="create"
                     element={<AddProductPage/>}
                 />
+
+                <Route
+                    path="edit/:id"
+                    element={<EditProductPage/>}
+                />
+
             </Route>
         </Routes>
     );

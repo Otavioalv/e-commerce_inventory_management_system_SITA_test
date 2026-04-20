@@ -4,6 +4,7 @@ import { Button } from "../../../shared/components/ui/Button";
 import type { Product } from "../types";
 import { useState } from "react";
 import { DeleteProductDialog } from "./DeleteProductDialog";
+import { useNavigate } from "react-router-dom";
 
 
 /* 
@@ -24,6 +25,8 @@ export const ProductsTable = ({
     deleteProduct,
     isLoading,
 }: IProductTableProps) => {
+    const navigate = useNavigate();
+    
     const [selectedId, setSelectedId] = useState<number | null>(null);
 
     const handleConfirmDelete = async () => {
@@ -69,7 +72,10 @@ export const ProductsTable = ({
                                 <td className="px-6 py-4">{prod.price}</td>
                                 <td className="px-6 py-4">{prod.stockQuantity}</td>
                                 <td className="px-6 py-4 flex gap-2">
-                                    <Button variant={"icon"}>
+                                    <Button 
+                                        variant={"icon"}
+                                        onClick={() => navigate(`/products/edit/${prod.id}`)}
+                                    >
                                         <LuPencil size={18}/>
                                     </Button>
                                     <Button 
