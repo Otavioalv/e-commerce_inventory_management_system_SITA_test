@@ -7,6 +7,7 @@ import type { Product } from "../types";
 import { FullPageLoading } from "../../../shared/components/layout/FullPageLoading";
 import { ProductForm } from "../components/ProductForm";
 import type { ProductFormData } from "../schemas/products.schemas";
+import { ProductNotFoundScreen } from "../components/ProductNotFoundScreen";
 
 
 
@@ -69,12 +70,17 @@ export default function EditProductPage () {
                 isLoading={isLoading}
             />
 
-            <ProductForm
-                product={product || undefined}
-                onSaveProduct={handleUpdate}
-                title="Edit This Product"
-                isLoading={isLoading}
-            />
+            {product ? (
+                <ProductForm
+                    product={product || undefined}
+                    onSaveProduct={handleUpdate}
+                    title="Edit This Product"
+                    isLoading={isLoading}
+                />
+
+            ) : (
+                <ProductNotFoundScreen/>
+            )}  
         </Container>
     );
 }

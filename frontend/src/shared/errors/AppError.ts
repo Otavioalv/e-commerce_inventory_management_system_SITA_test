@@ -1,5 +1,5 @@
 
-// Erro generico
+// Generic Error
 export class AppError extends Error {
     constructor(message: string) {
         super(message);
