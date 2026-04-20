@@ -4,6 +4,7 @@ import type { Product } from "../types";
 
 
 export type ProductContextType = {
+    isLoading: boolean;
     products: Product[];
     fetchProducts: () => Promise<void>;
     // addProduct: (data: Product) => Promise<void>;
