@@ -1,3 +1,7 @@
+import { LuPencil, LuTrash2 } from "react-icons/lu";
+
+import { Button } from "../../../components/ui/Button";
+
 
 const MOCK_PRODUCTS = [
         {
@@ -189,8 +193,12 @@ export const ProductsTable = () => {
                             <td className="px-6 py-4">{prod.price}</td>
                             <td className="px-6 py-4">{prod.stockquantity}</td>
                             <td className="px-6 py-4 flex gap-2">
-                                <button className="text-red-600 hover:underline">del</button>
-                                <button className="text-blue-600 hover:underline">edit</button>
+                                <Button variant={"icon"}>
+                                    <LuPencil size={18}/>
+                                </Button>
+                                <Button variant={"icon"}>
+                                    <LuTrash2 size={18}/>
+                                </Button>
                             </td>
                         </tr>
                     ))}
