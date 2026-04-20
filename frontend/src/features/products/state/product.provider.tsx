@@ -36,7 +36,6 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
         const load = async () => {
             await fetchProducts();
         };
-
         load();
     }, [fetchProducts]);
 
