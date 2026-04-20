@@ -11,18 +11,22 @@ import { useForm } from "react-hook-form";
 
 import type { ProductFormData } from "../schemas/products.schemas";
 import { useNavigate } from "react-router-dom";
+import type { Product } from "../types";
+import { useEffect } from "react";
 
 
 interface IProductFormProps {
     title: string,
     onSaveProduct: (data: ProductFormData) => void,
     isLoading: boolean,
+    product?: Product,
 }
 
 export const ProductForm = ({
     title,
     isLoading,
     onSaveProduct,
+    product,
 }: IProductFormProps) => {
     const navigate = useNavigate();
 
@@ -35,6 +39,18 @@ export const ProductForm = ({
             stockQuantity: "",
         }
     });
+
+    const { reset } = methods;
+    useEffect(() => {
+        if(product) {
+            reset({
+                name: product.name,
+                description: product.description,
+                price: String(product.price),
+                stockQuantity: String(product.stockQuantity),
+            });
+        }
+    }, [product, reset]);
     
 
     return (
