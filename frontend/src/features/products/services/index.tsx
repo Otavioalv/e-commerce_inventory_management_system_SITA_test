@@ -29,3 +29,8 @@ export const fetchProductDelete = async (id: number):Promise<ApiResponse<Product
     return result.data
 }
 
+// Update product 
+export const fetchProductUpdate = async (id: number, product: Omit<Product, "id">): Promise<ApiResponse<Product>>=> {
+    const result = await api.put<ApiResponse<Product>>(`/products/${id}`, product)
+    return result.data;
+}
