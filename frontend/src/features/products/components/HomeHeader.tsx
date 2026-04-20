@@ -1,3 +1,4 @@
+import { Button } from "../../../components/ui/Button";
 
 
 export const HomeHeader = () => {
@@ -12,9 +13,9 @@ export const HomeHeader = () => {
                 </h2>
             </div>
 
-            <button className="bg-gray-900 text-white py-3 px-5 rounded-md font-bold active:bg-gray-900/80 hover:bg-gray-900/90 transition-all cursor-pointer text-sm">
+            <Button>
                 + Add New Product
-            </button>
+            </Button>
         </div>
     );
 }
