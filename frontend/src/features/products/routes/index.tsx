@@ -1,10 +1,10 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-
-
-import HomePage from "../pages/HomePage";
 import Layout from "../../../shared/components/layout/Layout";
-import AddProductPage from "../pages/AddProductPage";
+import { Navigate, Route, Routes } from "react-router-dom";
 import EditProductPage from "../pages/EditProductPage";
+import AddProductPage from "../pages/AddProductPage";
+import HomePage from "../pages/HomePage";
+
+
 
 export default function ProductsRoutes() {
     return (

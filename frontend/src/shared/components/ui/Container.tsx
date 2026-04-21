@@ -1,5 +1,6 @@
-import type { PropsWithChildren } from "react";
 import { MainContainer } from "./MainContainer";
+
+import type { PropsWithChildren } from "react";
 
 type TContainerProps = PropsWithChildren;
 

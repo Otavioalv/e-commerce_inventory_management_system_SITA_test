@@ -5,14 +5,14 @@ import { Button } from "../../../shared/components/ui/Button";
 import { Form } from "../../../shared/components/forms/Form";
 import { productSchema } from "../schemas/products.schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
 import { LuChevronLeft } from "react-icons/lu";
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
 
 
 import type { ProductFormData } from "../schemas/products.schemas";
-import { useNavigate } from "react-router-dom";
 import type { Product } from "../types";
-import { useEffect } from "react";
 
 
 interface IProductFormProps {

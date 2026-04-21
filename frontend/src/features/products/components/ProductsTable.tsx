@@ -1,10 +1,10 @@
-import { LuPencil, LuTrash2 } from "react-icons/lu";
-
 import { Button } from "../../../shared/components/ui/Button";
-import type { Product } from "../types";
-import { useState } from "react";
 import { DeleteProductDialog } from "./DeleteProductDialog";
+import { LuPencil, LuTrash2 } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import type { Product } from "../types";
 
 
 /* 

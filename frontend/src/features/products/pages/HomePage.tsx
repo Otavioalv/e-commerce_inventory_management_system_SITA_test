@@ -1,7 +1,7 @@
 import { FullPageLoading } from "../../../shared/components/layout/FullPageLoading";
 import { Container } from "../../../shared/components/ui/Container";
-import { HomeHeader } from "../components/HomeHeader";
 import { ProductsTable } from "../components/ProductsTable";
+import { HomeHeader } from "../components/HomeHeader";
 import { useProducts } from "../state/useProducts";
 
 

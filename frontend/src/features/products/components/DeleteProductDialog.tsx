@@ -1,4 +1,6 @@
-import { ConfirmDialog, type IConfirmDialogProps } from "../../../shared/components/ui/ConfirmDialog";
+import { ConfirmDialog } from "../../../shared/components/ui/ConfirmDialog";
+
+import type { IConfirmDialogProps } from "../../../shared/components/ui/ConfirmDialog";
 
 type IDeleteProductDialogProps = Omit<IConfirmDialogProps, "title" | "description">;
 

@@ -1,10 +1,10 @@
 import { fetchProductAdd, fetchProductById, fetchProductDelete, fetchProductList, fetchProductUpdate } from "../services";
+import { AppError } from "../../../shared/errors/AppError";
 import { useCallback, useEffect, useState } from "react";
 import { ProductContext } from "./product.context";
 import toast from "react-hot-toast";
 
 import type { Product } from "../types";
-import { AppError } from "../../../shared/errors/AppError";
 
 
 export function ProductProvider({ children }: { children: React.ReactNode }) {
@@ -78,7 +78,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
         const load = async () => {
             await fetchProducts();
         };
-        console.warn("PRODUCT PROVIDER");
+        // console.warn("PRODUCT PROVIDER");
         load();
     }, [fetchProducts]);
 

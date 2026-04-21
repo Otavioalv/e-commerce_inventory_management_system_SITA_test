@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { FullPageLoading } from "../../../shared/components/layout/FullPageLoading";
 import { Container } from "../../../shared/components/ui/Container";
 import { ProductForm } from "../components/ProductForm";
+import { useProducts } from "../state/useProducts";
+import { useNavigate } from "react-router-dom";
+
 
 import type { ProductFormData } from "../schemas/products.schemas";
-import { useProducts } from "../state/useProducts";
-import { FullPageLoading } from "../../../shared/components/layout/FullPageLoading";
-
 
 export default function AddProductPage() {
     const navigate = useNavigate();
