@@ -17,7 +17,7 @@ export const HomeHeader = () => {
             </div>
 
             <Button
-
+                aria-label="add-new-product-btn"
                 onClick={() => navigate("/products/create")}
             >
                 + Add New Product

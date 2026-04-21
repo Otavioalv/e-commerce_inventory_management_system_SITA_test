@@ -28,6 +28,7 @@ export const ConfirmDialog = ({
 
                 <div className="flex justify-end gap-2">
                     <Button
+                        aria-label="cancel-dialog-button"
                         onClick={onCancel}
                         variant={"outline"}
                         disabled={isLoading}
@@ -36,6 +37,7 @@ export const ConfirmDialog = ({
                     </Button>
 
                     <Button 
+                        aria-label="comfirm-dialog-button"
                         onClick={onConfirm}
                         disabled={isLoading}
                         variant={isLoading ? "disabled" : "default"}

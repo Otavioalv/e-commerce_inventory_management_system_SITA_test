@@ -73,12 +73,14 @@ export const ProductsTable = ({
                                 <td className="px-6 py-4">{prod.stockQuantity}</td>
                                 <td className="px-6 py-4 flex gap-2">
                                     <Button 
+                                        aria-label={`edit-product-${prod.id}`}
                                         variant={"icon"}
                                         onClick={() => navigate(`/products/edit/${prod.id}`)}
                                     >
                                         <LuPencil size={18}/>
                                     </Button>
                                     <Button 
+                                        aria-label={`delete-product-${prod.id}`}
                                         variant={"icon"}
                                         onClick={() => setSelectedId(prod.id)}
                                     >
