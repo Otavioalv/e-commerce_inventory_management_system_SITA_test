@@ -27,4 +27,4 @@ update node 18-04-26 (alias bug tsconfig.json)
 - [x] Implement error handling for API requests and display meaningful
 - [x] messages to the user.
 - [ ] Add basic authentication (e.g., JWT) to secure the API endpoints.
-- [ ] Write unit tests
+- [x] Write unit tests
