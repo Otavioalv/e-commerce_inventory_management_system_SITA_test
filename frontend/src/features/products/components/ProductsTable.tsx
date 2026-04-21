@@ -67,11 +67,11 @@ export const ProductsTable = ({
                                 <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                     {prod.id}
                                 </td>
-                                <td className="px-6 py-4 whitespace-nowrap">{prod.name}</td>
-                                <td className="px-6 py-4 whitespace-nowrap">{prod.description}</td>
-                                <td className="px-6 py-4">{prod.price}</td>
-                                <td className="px-6 py-4">{prod.stockQuantity}</td>
-                                <td className="px-6 py-4 flex gap-2">
+                                <td className="px-6 py-4 max-w-xs wrap-break-word">{prod.name}</td>
+                                <td className="px-6 py-4 max-w-xs wrap-break-word">{prod.description}</td>
+                                <td className="px-6 py-4 max-w-xs wrap-break-word">{prod.price}</td>
+                                <td className="px-6 py-4 max-w-xs wrap-break-word">{prod.stockQuantity}</td>
+                                <td className="px-6 py-4 max-w-xs wrap-break-word flex gap-2">
                                     <Button 
                                         aria-label={`edit-product-${prod.id}`}
                                         variant={"icon"}
