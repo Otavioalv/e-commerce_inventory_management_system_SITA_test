@@ -43,8 +43,15 @@ export const addNewProduct = async (product: Product): Promise<Product> => {
 
     const {rows} = await pool.query(query, values);
     
+    const row = rows[0];
 
-    return rows[0]
+    return {
+        id: row.id,
+        name: row.name,
+        description: row.description,
+        price: row.price,
+        stockQuantity: row.stock_quantity,
+    };
 }
 
 
@@ -69,20 +76,36 @@ export const updateProduct = async (id: string, product: Product): Promise<Produ
         id
     ];
 
-    const {rows} = await pool.query<Product>(query, values);
+    const {rows} = await pool.query(query, values);
 
-    return rows[0] || null;
+    const row = rows[0];
+    
+    if(!row) return null;
+    return {
+        id: row.id,
+        name: row.name,
+        description: row.description,
+        price: row.price,
+        stockQuantity: row.stock_quantity,
+    };
 }
 
-export const deleteProduct = async (id: string) => {
+export const deleteProduct = async (id: string):Promise<Product | null> => {
     const query = `
         DELETE from products WHERE id = $1 RETURNING *;
     `;
 
-    const {rows} = await pool.query<Product>(query, [id]);
+    const {rows} = await pool.query(query, [id]);
 
-    // console.log(rows);
-
-    return rows[0] || null
+    const row = rows[0];
+    
+    if(!row) return null;
+    return {
+        id: row.id,
+        name: row.name,
+        description: row.description,
+        price: row.price,
+        stockQuantity: row.stock_quantity,
+    };
 }
 
