@@ -78,7 +78,7 @@ describe("HomeProductPage", () => {
         expect(navigateMock).toHaveBeenCalledWith("/products/create");
     })
 
-    it("should press clear button comfirm delete product", async () => {
+    it("should press clear button and comfirm delete product", async () => {
         /* comfirm-dialog-button */
         /* delete-product-${prod.id} */
         const deleteButton = screen.getByRole("button", {
