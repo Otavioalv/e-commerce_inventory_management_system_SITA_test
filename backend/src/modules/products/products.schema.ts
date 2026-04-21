@@ -11,7 +11,7 @@ export const productCreateSchema:z.ZodType<Omit<Product, 'id'>> = z.object({
         .min(1, "Name is required"),
     description: z
         .string("Value must be characters")
-        .min(10, "Description is too short"),
+        .min(5, "Description is too short"),
     price: z
         .number("Value must be numeric")
         .positive("Price must be greater than 0"),
