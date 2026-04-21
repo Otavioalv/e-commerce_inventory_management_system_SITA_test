@@ -4,5 +4,5 @@ const PORT = 3333;
 const HOST = "0.0.0.0";
 
 app.listen(PORT, HOST, () => {
-    console.log(`Server running on url http://127.0.0.1:${PORT}`);
+    console.log(`Server running on url http://${HOST}:${PORT}`);
 });
