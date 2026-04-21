@@ -4,7 +4,7 @@ import type { Product } from '@/shared/types';
 
 export const listProduct = async ():Promise<Product[]> => {    
     const query = `
-        SELECT id, name, description, price, stock_quantity as stockQuantity FROM products;
+        SELECT id, name, description, price, stock_quantity as "stockQuantity" FROM products;
     `;
 
     const result = await pool.query<Product>(query);
@@ -14,7 +14,7 @@ export const listProduct = async ():Promise<Product[]> => {
 
 export const listProductById = async (id: string):Promise<Product[]> => {    
     const query = `
-        SELECT id, name, description, price, stock_quantity as stockQuantity 
+        SELECT id, name, description, price, stock_quantity as "stockQuantity" 
         FROM products
         WHERE id = $1;
     `;

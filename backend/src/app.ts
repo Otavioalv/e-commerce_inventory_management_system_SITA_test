@@ -11,6 +11,7 @@ import type { Request, Response } from 'express';
 
 const app = express();
 
+// change origin when production
 app.use(cors({
     origin: "*"
 }));
