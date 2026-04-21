@@ -19,7 +19,7 @@ export default function AddProductPage() {
         await addProduct({
             description: data.description,
             name: data.name,
-            price: Number(data.price),
+            price: data.price,
             stockQuantity: Number(data.stockQuantity),
         });
 
