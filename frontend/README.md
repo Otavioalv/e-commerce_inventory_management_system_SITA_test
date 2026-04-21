@@ -7,3 +7,4 @@
 - [x] Use React Router for navigation between pages.
 - [x] Implement state management (e.g., React Context or Redux) to handle
 product data. (Implemented with React Context)
+- [] implement tests

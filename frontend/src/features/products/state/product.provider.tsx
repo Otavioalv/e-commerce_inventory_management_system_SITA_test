@@ -18,7 +18,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
             setIsLoading(true);
             return await fn();
         }catch(err) {
-            console.error(err);
+            // console.error(err);
             if(err instanceof AppError) {
                 toast.error(err.message);
             }
