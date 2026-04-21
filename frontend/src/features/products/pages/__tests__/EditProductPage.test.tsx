@@ -59,20 +59,31 @@ describe("EditProductPage", () => {
         expect(priceInput).toHaveValue("10");
         expect(stockQuantityInput).toHaveValue(5);
 
-        
+        // typing new values to input form
         await user.clear(nameInput);
         await user.type(nameInput, "Updated Product");
+        
+        await user.clear(descriptionInput);
+        await user.type(descriptionInput, "Update Description");
 
+        await user.clear(priceInput);
+        await user.type(priceInput, "67");
+        
+        await user.clear(stockQuantityInput);
+        await user.type(stockQuantityInput, "67");
+
+        // submit form
         await user.click(
             screen.getByRole("button", { name: /save product/i })
         );
 
+
         await waitFor(() => {
             expect(updateProductMock).toHaveBeenCalledWith(1, {
                 name: "Updated Product",
-                description: "Old Description",
-                price: "10",
-                stockQuantity: 5,
+                description: "Update Description",
+                price: "67",
+                stockQuantity: 67,
             });
         });
 
