@@ -2,14 +2,21 @@ import type { TextareaHTMLAttributes } from "react";
 
 interface IFormTextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     label: string;
+    id: string,
     error?: string;
 }
 
-export function FormTextArea({ label, error, ...props }: IFormTextAreaProps) {
+export function FormTextArea({ label, id, error, ...props }: IFormTextAreaProps) {
     return (
         <div className="flex flex-col gap-1 w-full">
-            <label className="font-bold text-sm text-gray-700">{label}</label>
+            <label 
+                htmlFor={id}
+                className="font-bold text-sm text-gray-700"
+            >
+                    {label}
+            </label>
             <textarea 
+                id={id}
                 {...props} 
                 className={`
                     border border-gray-300 p-2 rounded-sm min-h-60 

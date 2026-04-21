@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run --reporter=verbose"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

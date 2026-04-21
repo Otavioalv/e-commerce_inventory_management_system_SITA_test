@@ -79,6 +79,7 @@ export const ProductForm = ({
                     {({ register, error }) => (
                         <FormInput
                             label="Product Name *" 
+                            id="name"
                             placeholder="Industrial Grade Compressor"
                             error={error}
                             {...register}
@@ -89,6 +90,7 @@ export const ProductForm = ({
                 <FormField name="description">
                     {({ register, error }) => (
                         <FormTextArea
+                            id="description"
                             label="Description *" 
                             placeholder="High-performance air compressor..."
                             error={error}
@@ -102,8 +104,9 @@ export const ProductForm = ({
                         {({ register, error }) => (
                             <div className="flex-1 min-w-0">
                                 <FormInput 
+                                    id="unit_price"
                                     label="Unit Price (USD) *" 
-                                    type="number"
+                                    type="text"
                                     placeholder="0.00"
                                     error={error}
                                     {...register}
@@ -116,6 +119,7 @@ export const ProductForm = ({
                         {({ register, error }) => (
                             <div className="flex-1 min-w-0">
                                 <FormInput 
+                                    id="stock_quantity"
                                     label="Stock Quantity *" 
                                     type="number"
                                     placeholder="12"
