@@ -209,7 +209,35 @@ The frontend will be available at:
 ```
 http://localhost:5174/
 ```
+---
+# Tests
 
+##### Frontend
+
+```sh
+├── e-commerce_inventory_management_system_SITA_test
+│   ├── frontend
+│   ├── ...
+```
+
+In the `frontend` folder, run the command in the terminal:
+```
+npm run test
+```
+
+##### Backend
+
+```sh
+├── e-commerce_inventory_management_system_SITA_test
+│   ├── backend
+│   ├── ...
+```
+
+In the `backend` folder, run the command in the terminal:
+
+```
+npm install
+```
 
 ---
 
@@ -438,6 +466,36 @@ O frontend estará disponível em:
 
 ```
 http://localhost:5174/
+```
+
+---
+
+# Tests
+##### Frontend
+
+```sh
+├── e-commerce_inventory_management_system_SITA_test
+│   ├── frontend
+│   ├── ...
+```
+
+Na pasta `frontend` no terminal, digite o comando:
+```
+npm run test
+```
+
+##### Backend
+
+```sh
+├── e-commerce_inventory_management_system_SITA_test
+│   ├── backend
+│   ├── ...
+```
+
+Na pasta `backend` no terminal, digite o comando:
+
+```
+npm run test
 ```
 
 
