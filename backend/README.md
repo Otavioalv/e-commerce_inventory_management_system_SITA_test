@@ -1,3 +1,7 @@
+# Backend
+
+----
+
 # English
 # Stack
 - Node.js (v24.4.0)
@@ -145,6 +149,9 @@ http://127.0.0.1:3333
 ---
 
 ## Tests
+
+Jest was used as the testing framework for the backend. To run the test:
+
 
 Inside the `backend` folder, run:
 
@@ -458,6 +465,7 @@ http://127.0.0.1:3333
 ---
 
 ## Tests
+Jest foi usado como estrutura de teste para o backend. Para rodar:
 Na pasta `backend` no terminal, digite o comando:
 
 ```
